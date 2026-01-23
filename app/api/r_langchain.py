@@ -10,7 +10,7 @@ from app.core.openai_embedder import embed_fn
 
 lcRou = APIRouter()
 
-@lcRou.post("/agent1.1", summary="Wage Agent 1.1")
-async def agent11():
+@lcRou.post("/agent1", summary="Wage Agent 1.1")
+async def agent1():
     agent = await WageEmbeddingRepository.build_chunks()
     return {"count": len(chunks), "sample": chunks[:3]}
