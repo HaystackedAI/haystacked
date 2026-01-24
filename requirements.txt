@@ -6,3 +6,4 @@ alembic
 pgvector
 openai
 langchain
+langchain-openai
