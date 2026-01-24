@@ -14,5 +14,5 @@ def rouGet():
 
 
 rou.include_router(wageRou, prefix="/wages", tags=["Wages"])
-# rou.include_router(agentRou, prefix="/agents", tags=["Agents"])
+rou.include_router(lcRou, prefix="/langchain", tags=["Agents"])
 rou.include_router(embeddingRou, prefix="/embeddings", tags=["Embeddings"])
