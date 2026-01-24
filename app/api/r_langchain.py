@@ -1,16 +1,19 @@
-# app/api/routes/wage.py
-from fastapi import APIRouter, Depends, UploadFile, File, Query
-from sqlalchemy.ext.asyncio import AsyncSession
-from app.db.db_async import get_db
-from app.service.ser_wage import WageService
+from fastapi import APIRouter
+from app.component.agents_langchain import BasicAgent
 from app.db.repo.repo_wage_embedding import WageEmbeddingRepository
-from app.service.ser_wage_embedding import WageEmbeddingService
-from app.core.openai_embedder import embed_fn
-
 
 lcRou = APIRouter()
 
-@lcRou.post("/agent1", summary="Wage Agent 1.1")
-async def agent1():
-    agent = await WageEmbeddingRepository.build_chunks()
-    return {"count": len(chunks), "sample": chunks[:3]}
+agent = BasicAgent()  # singleton (recommended)
+
+
+@lcRou.post("/agent_simple", summary="Wage Agent 1.1")
+async def agent_simple():
+
+    response = await agent.invoke(
+        f"What's the capital of the Moon?"
+    )
+
+    return {
+        "agent_response": response,
+    }
