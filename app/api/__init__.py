@@ -3,7 +3,7 @@ from fastapi.responses import RedirectResponse
 # from app.api.r_report import reportRou
 
 from app.api.r_wage_table import wageRou
-from app.api.r_langchain import lcRou
+from app.api.r_lc import lcRou
 from app.api.r_embedding import router as embeddingRou
 
 rou = APIRouter()
