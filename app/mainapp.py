@@ -22,6 +22,8 @@ def create_app() -> FastAPI:
     settings = get_settings_singleton()
     # if os.environ.get("SERPERDEV_API_KEY") != settings.SERPERDEV_API_KEY:os.environ["SERPERDEV_API_KEY"] = settings.SERPERDEV_API_KEY
     # if os.environ.get("OPENAI_API_KEY") != settings.OPENAI_API_KEY:      os.environ["OPENAI_API_KEY"] = settings.OPENAI_API_KEY
+    if os.environ.get("TAVILY_API_KEY") != settings.OPENAI_API_KEY:      
+        os.environ["TAVILY_API_KEY"] = settings.TAVILY_API_KEY
     
     app = FastAPI(
         title=settings.PROJECT_NAME,

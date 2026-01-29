@@ -11,6 +11,7 @@ class _Settings(BaseSettings):
     # 公共 API 只有 get_settings_singleton()
     OPENAI_API_KEY: Optional[str] = None
     SERPERDEV_API_KEY: Optional[str] = None
+    TAVILY_API_KEY: str = "ff"
 
     # Database
     LAKE_ASYNC: str = "postgresql+asyncpg://username:pwd@local/icedb"

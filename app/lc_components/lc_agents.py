@@ -1,6 +1,6 @@
 # agents.py
 from langchain.agents import create_agent
-from langchain.messages import HumanMessage
+from langchain_core.messages import HumanMessage
 
 class AgentFactory:
     def __init__(self, model):
@@ -37,6 +37,17 @@ class MathToolAgent(BaseAgent):
             system_prompt=(
                 "You are an arithmetic wizard. "
                 "Use your tools to calculate the square root and square of any number."
+            ),
+        )
+        super().__init__(agent)
+
+
+class TavilyWebSearchAgent(BaseAgent):
+    def __init__(self, factory: AgentFactory, tools):
+        agent = factory.create(
+            tools=tools,
+            system_prompt=(
+                "How up to date is your training knowledge?"
             ),
         )
         super().__init__(agent)
