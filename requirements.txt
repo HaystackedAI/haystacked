@@ -7,4 +7,7 @@ pgvector
 openai
 langchain
 langchain-openai
+<<<<<<< HEAD
 tavily
+=======
+>>>>>>> 556eb5f35d799c053266b26cef538db871013e99

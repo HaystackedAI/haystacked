@@ -28,7 +28,7 @@ class _Settings(BaseSettings):
     SEED_SAMPLE_SIZE: int = 10  # Number of sample records to create
 
     # Application
-    PROJECT_NAME: str = "Wildfire Agent"
+    PROJECT_NAME: str = "Haystaced Agent"
     VERSION: str = "1.0.0"
     DESCRIPTION: str = "When Haystack meets Wildfire"
     ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
